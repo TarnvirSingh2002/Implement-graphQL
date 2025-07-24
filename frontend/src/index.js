@@ -10,21 +10,6 @@ const client = new ApolloClient({
   cache:new InMemoryCache(),
 });
 
-const query = `
-  query getAllTodos
-    {
-      getTodo
-      {
-        id, 
-        title, 
-        post{ 
-          id, 
-          body
-        }
-      }
-    }
-  `
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

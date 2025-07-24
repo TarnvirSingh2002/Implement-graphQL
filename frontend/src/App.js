@@ -1,5 +1,4 @@
-import React from 'react'
-import { gql, useQuery } from '@apollo/client'
+import { gql, useQuery } from '@apollo/client';
 
   const query = gql`
   query getAllTodos
@@ -16,12 +15,16 @@ import { gql, useQuery } from '@apollo/client'
     }
   `
 export default function App() {
+
+  // devDependency is a package you need only while developing, testing, 
+  // or building your project—not when it’s running in production.
+
   const {data, loading} = useQuery(query);
   if(loading)
     return <h1>Loading....</h1>;
   return (
     <div>
-      
+    {data.getTodo.map(ele=> <h1>{ele.title}</h1>)}
     </div>
   )
 }
